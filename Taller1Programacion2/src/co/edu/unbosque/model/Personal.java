@@ -3,14 +3,14 @@ package co.edu.unbosque.model;
 import java.util.Date;
 
 public class Personal {
-	private String cedula;
-	private String nombre;
-	private String apellidos;
-	private char genero;
-	private long telefono;
-	private String correo;
-	private String direccion;
-	private Date ano;
+	protected String cedula;
+	protected String nombre;
+	protected String apellidos;
+	protected char genero;
+	protected long telefono;
+	protected String correo;
+	protected String direccion;
+	protected Date ano;
 	
 		public Personal(String cedula, String nombre, String apellidos, char genero,
 		long telefono, String correo,String direccion, Date ano) {

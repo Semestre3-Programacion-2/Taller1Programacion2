@@ -2,8 +2,8 @@ package co.edu.unbosque.model;
 
 import java.util.Date;
 
-public class PersonalSalFijo extends Personal{
-	private double salario;
+public class PersonalSalFijo extends Personal implements CalcularSalario{
+	protected double salario;
 	private double porcentaje;
 	
 		public PersonalSalFijo(String cedula, String nombre, String apellidos, char genero,
@@ -23,5 +23,20 @@ public class PersonalSalFijo extends Personal{
 	}
 	public void setPorcentaje(double porcentaje) {
 		this.porcentaje = porcentaje;
+	}
+	@Override
+	public double calcularSalario() {
+		if((2019-ano.getYear())<=3) {
+			salario = salario + (salario*0.05);
+		}else if(2019-ano.getYear()>3&&2019-ano.getYear()<=7) {
+			salario = salario + (salario*0.10);
+		}else if(2019-ano.getYear()>3&&2019-ano.getYear()<=7) {
+			salario = salario + (salario*0.10);
+		}else if(2019-ano.getYear()>7&&2019-ano.getYear()<=15) {
+			salario = salario + (salario*0.15);
+		}else if(2019-ano.getYear()>15) {
+			salario = salario + (salario*0.20);
+		}
+		return salario;
 	}
 }
