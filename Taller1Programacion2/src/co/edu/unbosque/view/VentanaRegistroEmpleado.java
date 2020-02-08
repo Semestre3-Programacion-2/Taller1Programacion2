@@ -65,7 +65,6 @@ public class VentanaRegistroEmpleado extends JFrame {
 	    direccion_.setFont(font);
 	    cargo_= new JComboBox<String>();
 	    cargo_.setFont(font);
-	    cargo_.addItem("Salario Fijo");
 	    cargo_.addItem("Ingeniero Junior");
 	    cargo_.addItem("Ingeniero Senior");
 	    cargo_.addItem("Comision");

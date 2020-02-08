@@ -6,8 +6,8 @@ public class IngJunior extends PersonalSalFijo implements CalcularSalario{
 	private int nivel;
 
 		public IngJunior(String cedula, String nombre, String apellidos, char genero,
-				long telefono, String correo,String direccion, Date ano, double salario, double porcentaje, int nivel) {
-		super(cedula, nombre, apellidos, genero, telefono, correo, direccion, ano, salario, porcentaje);
+				long telefono, String correo,String direccion, String ano, int nivel) {
+		super(cedula, nombre, apellidos, genero, telefono, correo, direccion, ano);
 		this.nivel = nivel;
 	}
 	public int getNivel() {
@@ -19,15 +19,18 @@ public class IngJunior extends PersonalSalFijo implements CalcularSalario{
 	@Override
 	public double calcularSalario() {
 		salario = 3500000;
-		if((2019-ano.getYear())<=3) {
+		char[] cadena = ano.toCharArray();
+		String aux = Character.toString(cadena[6])+Character.toString(cadena[7])+Character.toString(cadena[8])+Character.toString(cadena[9]);
+		int fecha = Integer.parseInt(aux);
+		if((2019-fecha)<=3) {
 			salario = salario + (salario*0.05);
-		}else if(2019-ano.getYear()>3&&2019-ano.getYear()<=7) {
+		}else if(2019-fecha>3&&2019-fecha<=7) {
 			salario = salario + (salario*0.10);
-		}else if(2019-ano.getYear()>3&&2019-ano.getYear()<=7) {
+		}else if(2019-fecha>3&&2019-fecha<=7) {
 			salario = salario + (salario*0.10);
-		}else if(2019-ano.getYear()>7&&2019-ano.getYear()<=15) {
+		}else if(2019-fecha>7&&2019-fecha<=15) {
 			salario = salario + (salario*0.15);
-		}else if(2019-ano.getYear()>15) {
+		}else if(2019-fecha>15) {
 			salario = salario + (salario*0.20);
 		}else if(nivel==2||nivel==3) {
 			salario = salario + (salario*0.05);

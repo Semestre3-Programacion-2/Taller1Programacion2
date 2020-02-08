@@ -7,10 +7,8 @@ public class PersonalSalFijo extends Personal implements CalcularSalario{
 	private double porcentaje;
 	
 		public PersonalSalFijo(String cedula, String nombre, String apellidos, char genero,
-				long telefono, String correo,String direccion, Date ano, double salario, double porcentaje) {
-		super(apellidos, apellidos, apellidos, genero, telefono, apellidos, apellidos, ano);
-		this.salario = salario;
-		this.porcentaje = porcentaje;
+				long telefono, String correo,String direccion, String ano) {
+		super(cedula, nombre, apellidos, genero, telefono, correo, direccion, ano);
 	}
 	public double getSalario() {
 		return salario;
@@ -26,17 +24,6 @@ public class PersonalSalFijo extends Personal implements CalcularSalario{
 	}
 	@Override
 	public double calcularSalario() {
-		if((2019-ano.getYear())<=3) {
-			salario = salario + (salario*0.05);
-		}else if(2019-ano.getYear()>3&&2019-ano.getYear()<=7) {
-			salario = salario + (salario*0.10);
-		}else if(2019-ano.getYear()>3&&2019-ano.getYear()<=7) {
-			salario = salario + (salario*0.10);
-		}else if(2019-ano.getYear()>7&&2019-ano.getYear()<=15) {
-			salario = salario + (salario*0.15);
-		}else if(2019-ano.getYear()>15) {
-			salario = salario + (salario*0.20);
-		}
 		return salario;
 	}
 }
